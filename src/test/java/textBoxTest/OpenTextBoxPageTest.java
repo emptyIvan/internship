@@ -51,6 +51,10 @@ public class OpenTextBoxPageTest {
         Assert.assertEquals(textBoxPage.getOutputCurAddr(), "Current Address :"+currentAddress);
         Assert.assertEquals(textBoxPage.getOutputPermAddr(),"Permananet Address :"+permanentAddress);
     }
+    @Test
+    public void step_3(){
+        textBoxPage.clearInputEmail();
+    }
     @AfterTest
     public void afterTest(){
         driver.quit();

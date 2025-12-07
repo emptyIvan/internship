@@ -19,10 +19,19 @@ public class MainPage extends BasePage {
     public By categoryCardElements = By.xpath("//div[@class='card mt-4 top-card']//h5[contains(text(),'Elements')]");
     public static final int COUNT_CATEGORY_CARDS = 6;
 
+    /**
+     * Метод findElements находит все элементы по заданному локатору в переменной "categoryCards" (переменная указана на 18 строке)
+     * метод size считает кол-во найденных элементов
+     * @return
+     */
     public int getCategoryCount(){
         return  driver.findElements(categoryCards).size();
     }
 
+    /**
+     * Метод кликает на локатор "categoryCardElements" (строка 19)
+     * @return
+     */
     public ElementsPage openElements(){
         driver.findElement(categoryCardElements).click();
         return new ElementsPage(driver);

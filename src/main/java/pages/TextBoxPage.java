@@ -25,6 +25,11 @@ public class TextBoxPage extends BasePage {
     public boolean isPageOpen(){
         return driver.findElement(header).isDisplayed();
     }
+
+    /**
+     * Метод вставляет текст в найденный вебэлемент
+     * @param fullName переменная в которой указывается, какой текст необходимо вставить в поле
+     */
     public void setFullName(String fullName){
         driver.findElement(fullNameLocator).sendKeys(fullName);
     }
@@ -56,6 +61,13 @@ public class TextBoxPage extends BasePage {
         return driver.findElements(outputId);
     }
 
+    /**
+     * Метод извлекает текст из локатора
+     * Метод String.format подставлет в текст переменной OUTPUT_XPATH (строка 23) вместо символов %s слово name
+     * далее это текст записывается в переменную locator
+     * после чего драйвер ищет элемент с xpath локатором и вытаскивает из него текст
+     * @return возвращает полученный текст, который можно использовать для дальнейших проверок
+     */
     public String getOutputName() {
         String locator = String.format(OUTPUT_XPATH, "name");
         return driver.findElement(By.xpath(locator)).getText();
@@ -74,5 +86,8 @@ public class TextBoxPage extends BasePage {
     public String getOutputPermAddr() {
         String locator = String.format(OUTPUT_XPATH, "permanentAddress");
         return driver.findElement(By.xpath(locator)).getText();
+    }
+    public void clearInputEmail(){
+        driver.findElement(emailLocator).clear();
     }
 }

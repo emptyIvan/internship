@@ -6,7 +6,10 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.time.Duration;
+
 import static browser.Config.BROWSER_TYPE;
+import static browser.Config.WAIT;
 
 public class Browser {
     public static WebDriver driver;
@@ -33,6 +36,7 @@ public class Browser {
                 System.out.println("Некорректное имя браузера: " + BROWSER_TYPE);
         }
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WAIT));
         return driver;
     }
 }

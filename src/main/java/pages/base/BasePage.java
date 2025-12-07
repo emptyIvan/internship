@@ -13,4 +13,7 @@ public class BasePage {
     public void openURL(String url){
         driver.get(url);
     }
+    public void failure() {
+        throw new AssertionError();
+    }
 }
