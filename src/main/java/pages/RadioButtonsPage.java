@@ -1,9 +1,10 @@
-package pages.base;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.base.BasePage;
 
-public class RadioButtonsPage extends BasePage{
+public class RadioButtonsPage extends BasePage {
     public RadioButtonsPage(WebDriver driver) {
         super(driver);
     }

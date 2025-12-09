@@ -6,10 +6,9 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.CheckBoxPage;
 import pages.ElementsPage;
 import pages.MainPage;
-import pages.base.RadioButtonsPage;
+import pages.RadioButtonsPage;
 
 import static browser.Config.START_URL;
 
